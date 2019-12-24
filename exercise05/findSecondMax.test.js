@@ -21,6 +21,14 @@ test('[4, 2] should be 2', () => {
   expect(findSecondMax([4, 2])).toBe(2)
 })
 
+test('[2, 2, 2] should be Error', () => {
+  expect(() => findSecondMax([2, 2, 2])).toThrow("Can't Find Second Max")
+})
+
+test('[2, 2, 4] should be Error', () => {
+  expect(findSecondMax([2, 2, 4])).toBe(2)
+})
+
 test('["4", "2"] (also works on array of string like number) should be 2', () => {
   expect(findSecondMax(["4", "2"])).toBe(2)
 })
