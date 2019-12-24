@@ -10,11 +10,22 @@ function isEqual(result, expected) {
 }
 
 function test(title, callback) {
-  // TODO: Implement Code
+  try {
+    callback()
+    console.log(`✓ Case ${title}: Test Passed`)
+  } catch (error) {
+    console.error(`✕ Case ${title}: ${error.message}`)
+  }
 }
 
 function expect(result) {
-  // TODO: Implement Code
+  return {
+    toBe: (expected) => {
+      if (!isEqual(result, expected)) {
+        throw new Error(`${result} is not equal to ${expected}`)
+      }
+    }
+  }
 }
 
 const expected = [1, 2, 3];
