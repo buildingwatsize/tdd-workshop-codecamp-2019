@@ -8,7 +8,7 @@ function generateMaxMinAverage() {
   ];
   const min = Math.min(...numbers);
   const max = Math.max(...numbers);
-  const avg = numbers.reduce((a, b) => a + b) / 3;
+  const avg = numbers.reduce((a, b) => a + b) / numbers.length;
 
   return {min, max, avg};
 }
